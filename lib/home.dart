@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.withOpacity(0.1),
+      backgroundColor: Colors.blue.withOpacity(0.4),
       body: SafeArea(
         //ScrollWidget
         child: SingleChildScrollView(
@@ -26,8 +26,8 @@ class _HomeState extends State<Home> {
             children: <Widget>[
               // Profile Card
               Container(
-                margin: EdgeInsets.all(16),
-                padding: EdgeInsets.all(16),
+                margin: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
               ),
               //Banner
               Container(
-                margin: EdgeInsets.only(top: 5),
+                margin: const EdgeInsets.only(top: 5),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
@@ -93,7 +93,7 @@ class _HomeState extends State<Home> {
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -121,13 +121,65 @@ class _HomeState extends State<Home> {
                     initialPage: 0,
                     autoPlay: true,
                     enlargeCenterPage: true,
-                    autoPlayInterval: Duration(seconds: 3),
+                    autoPlayInterval: const Duration(seconds: 3),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
+
+              //Kategori
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        'Kategori',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          _buildCategoryCard('Elektronik', Icons.phone, () {
+                            _navigateToCategoryPage(
+                                context, 'Produk Elektronik');
+                          }),
+                          _buildCategoryCard('Pakaian', Icons.shopping_bag, () {
+                            _navigateToCategoryPage(context, 'Produk Pakaian');
+                          }),
+                          _buildCategoryCard('Kecantikan', Icons.favorite, () {
+                            _navigateToCategoryPage(
+                                context, 'Produk Kecantikan');
+                          }),
+                          _buildCategoryCard(
+                              'Makanan & Minuman', Icons.fastfood, () {
+                            _navigateToCategoryPage(
+                                context, 'Produk Makanan & Minuman');
+                          }),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
 
               //Product
+              Container(
+                margin: const EdgeInsets.only(right: 295, bottom: 10, top: 10),
+                child: const Text(
+                  "Produk",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
               Container(
                 margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
                 child: Column(
@@ -148,7 +200,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 2,
                                 blurRadius: 5,
-                                offset: Offset(0, 3),
+                                offset: const Offset(0, 3),
                               ),
                             ],
                           ),
@@ -198,7 +250,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 2,
                                 blurRadius: 5,
-                                offset: Offset(0, 3),
+                                offset: const Offset(0, 3),
                               ),
                             ],
                           ),
@@ -239,7 +291,7 @@ class _HomeState extends State<Home> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     //Row 2
                     //Product Row 2
                     Row(
@@ -256,7 +308,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 2,
                                 blurRadius: 5,
-                                offset: Offset(0, 3),
+                                offset: const Offset(0, 3),
                               ),
                             ],
                           ),
@@ -570,6 +622,79 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  //icon widget yang merepresentasikan satu kategori.
+  Widget _buildCategoryCard(
+      String judul, IconData ikon, VoidCallback onPressed) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: 80,
+        height: 80,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              ikon,
+              size: 30,
+              color: Colors.blue,
+            ),
+            SizedBox(height: 8),
+            Text(
+              judul,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  //menavigasi ke halaman kategori baru ketika suatu kategori dipilih.
+  void _navigateToCategoryPage(BuildContext context, String category) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        //Memanggil class CategoryPage
+        builder: (context) => CategoryPage(category: category),
+      ),
+    );
+  }
+}
+
+//Membuat page baru ketika kategori di klik, maka akan memunculkan page baru
+class CategoryPage extends StatelessWidget {
+  final String category;
+
+  const CategoryPage({Key? key, required this.category}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(category),
+      ),
+      body: Center(
+        child: Text('$category'),
       ),
     );
   }

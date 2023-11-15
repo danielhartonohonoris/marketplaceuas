@@ -34,8 +34,8 @@ class _MainState extends State<Main> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Marketplace'),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.white,
           actions: [
             IconButton(
               icon: Icon(Icons.search),
