@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   List<String> assetImages = [
     'image/iklan_1.jpg',
     'image/iklan_2.jpg',
-    'image/iklan_3.jpg'
+    'image/iklan_3.jpg',
   ];
 
   @override
@@ -60,17 +60,20 @@ class _HomeState extends State<Home> {
                         Container(
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: Colors.blue, // Change the border color as needed
+                              color: Colors
+                                  .blue, // Change the border color as needed
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 6),
                           child: const Text(
                             'Mengikuti',
                             style: TextStyle(
                               fontSize: 14,
-                              color: Colors.blue, // Change the text color as needed
+                              color: Colors
+                                  .blue, // Change the text color as needed
                             ),
                           ),
                         ),

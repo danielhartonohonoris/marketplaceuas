@@ -14,7 +14,7 @@ class _LikesState extends State<Likes> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           body: SafeArea(
-        child: Text('Test'),
+        child: Text('Likes'),
       )),
     );
   }
