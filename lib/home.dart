@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.withOpacity(0.4),
+      backgroundColor: Colors.cyan.shade700,
       body: SafeArea(
         //ScrollWidget
         child: SingleChildScrollView(
