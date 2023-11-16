@@ -4,10 +4,14 @@ import 'package:test4/account.dart';
 import 'package:test4/cart.dart';
 import 'package:test4/home.dart';
 import 'package:test4/likes.dart';
+import 'package:test4/login_page.dart';
 import 'package:test4/searchpage.dart';
 
 void main() {
-  runApp(const Main());
+  runApp(MaterialApp(
+    home: LoginPage(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 
 class Main extends StatefulWidget {
