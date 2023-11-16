@@ -13,13 +13,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           gradient: LinearGradient(
         begin: Alignment.topRight,
         end: Alignment.bottomLeft,
         colors: [
-          Colors.blue,
-          Colors.red,
+          Colors.teal.shade400,
+          Colors.blueGrey.shade800,
         ],
       )),
       child: Scaffold(
