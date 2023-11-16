@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:test4/KategoriPage/Elektronik.dart';
+import 'package:test4/KategoriPage/Kecantikan.dart';
+import 'package:test4/KategoriPage/MakananMinuman.dart';
+import 'package:test4/KategoriPage/Pakaian.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,6 +17,14 @@ class _HomeState extends State<Home> {
     'image/iklan_1.jpg',
     'image/iklan_2.jpg',
     'image/iklan_3.jpg',
+  ];
+
+  List<CategoryModel> categories = [
+    //Memanggil Class CategoryModel
+    CategoryModel('Elektronik', Icons.phone),
+    CategoryModel('Pakaian', Icons.shopping_bag),
+    CategoryModel('Kecantikan', Icons.favorite),
+    CategoryModel('Makanan & Minuman', Icons.fastfood),
   ];
 
   @override
@@ -60,8 +72,7 @@ class _HomeState extends State<Home> {
                         Container(
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: Colors
-                                  .blue, // Change the border color as needed
+                              color: Colors.blue,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
@@ -72,8 +83,7 @@ class _HomeState extends State<Home> {
                             'Mengikuti',
                             style: TextStyle(
                               fontSize: 14,
-                              color: Colors
-                                  .blue, // Change the text color as needed
+                              color: Colors.blue,
                             ),
                           ),
                         ),
@@ -148,24 +158,23 @@ class _HomeState extends State<Home> {
                       margin: const EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          _buildCategoryCard('Elektronik', Icons.phone, () {
-                            _navigateToCategoryPage(
-                                context, 'Produk Elektronik');
-                          }),
-                          _buildCategoryCard('Pakaian', Icons.shopping_bag, () {
-                            _navigateToCategoryPage(context, 'Produk Pakaian');
-                          }),
-                          _buildCategoryCard('Kecantikan', Icons.favorite, () {
-                            _navigateToCategoryPage(
-                                context, 'Produk Kecantikan');
-                          }),
-                          _buildCategoryCard(
-                              'Makanan & Minuman', Icons.fastfood, () {
-                            _navigateToCategoryPage(
-                                context, 'Produk Makanan & Minuman');
-                          }),
-                        ],
+                        //Membuat widget dari list categories
+                        children: categories
+                            .map(
+                              (category) => _buildCategoryCard(
+                                //Memanggil fungsi untuk membuat title dan icon
+                                category.title,
+                                category.icon,
+                                //fungsi untuk menavigasi ke halaman kategori
+                                () {
+                                  _navigateToCategoryPage(
+                                    context,
+                                    category.title,
+                                  );
+                                },
+                              ),
+                            )
+                            .toList(),
                       ),
                     ),
                   ],
@@ -626,7 +635,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  //icon widget yang merepresentasikan satu kategori.
+  //widget yang membuat page baru dari masing-masing kategori.
   Widget _buildCategoryCard(
       String judul, IconData ikon, VoidCallback onPressed) {
     return GestureDetector(
@@ -669,33 +678,60 @@ class _HomeState extends State<Home> {
     );
   }
 
-  //menavigasi ke halaman kategori baru ketika suatu kategori dipilih.
   void _navigateToCategoryPage(BuildContext context, String category) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        //Memanggil class CategoryPage
-        builder: (context) => CategoryPage(category: category),
-      ),
-    );
+    switch (category) {
+      case 'Elektronik':
+        //Navigasi Elektronik
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            //Memanggil class Elektronik
+            builder: (context) => Elektronik(),
+          ),
+        );
+        break;
+
+      case 'Pakaian':
+        //Navigasi Pakaian
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            //Memanggil class Pakaian
+            builder: (context) => Pakaian(),
+          ),
+        );
+        break;
+
+      case 'Kecantikan':
+        //Navigasi Kecantikan
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            //Memanggil class Kecantikan
+            builder: (context) => Kecantikan(),
+          ),
+        );
+        break;
+      case 'Makanan & Minuman':
+        //Navigasi MakananMinuman
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            //Memanggil class MakananMinuman
+            builder: (context) => MakananMinuman(),
+          ),
+        );
+        break;
+      default:
+        break;
+    }
   }
 }
 
-//Membuat page baru ketika kategori di klik, maka akan memunculkan page baru
-class CategoryPage extends StatelessWidget {
-  final String category;
-
-  const CategoryPage({Key? key, required this.category}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(category),
-      ),
-      body: Center(
-        child: Text('$category'),
-      ),
-    );
-  }
+//informasi kategori untuk title dan icon CategoryModel
+class CategoryModel {
+  final String title;
+  final IconData icon;
+  //membuat instance CategoryModel dengan title dan icon
+  CategoryModel(this.title, this.icon);
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:test4/account.dart';
-import 'package:test4/cart.dart';
-import 'package:test4/home.dart';
-import 'package:test4/likes.dart';
-import 'package:test4/login_page.dart';
+import 'package:test4/NavbarPage/account.dart';
+import 'package:test4/NavbarPage/cart.dart';
+import 'package:test4/NavbarPage/home.dart';
+import 'package:test4/NavbarPage/likes.dart';
+import 'package:test4/LoginPage/login_page.dart';
 import 'package:test4/searchpage.dart';
 
 void main() {
@@ -27,7 +27,7 @@ class _MainState extends State<Main> {
   final List<Widget> pages = [
     const Home(),
     const Likes(),
-    CartPage(),
+    const Cart(),
     const Account(),
   ];
 
@@ -76,7 +76,7 @@ class _MainState extends State<Main> {
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               duration: Duration(milliseconds: 800),
               tabBackgroundColor: Colors.grey.shade800,
-              tabs: [
+              tabs: const[
                 GButton(
                   icon: Icons.home,
                   text: 'Home',

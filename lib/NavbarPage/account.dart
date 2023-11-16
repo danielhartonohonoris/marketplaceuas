@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Account extends StatefulWidget {
-  const Account({Key? key}) : super(key: key);
+  const Account({super.key});
 
   @override
-  _AccountState createState() => _AccountState();
+  State<Account> createState() => _AccountState();
 }
 
 class _AccountState extends State<Account> {
@@ -13,11 +13,9 @@ class _AccountState extends State<Account> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: SafeArea(
-            child: Stack(
-          children: [Text('Account')],
-        )),
-      ),
+          body: SafeArea(
+        child: Text('Account'),
+      )),
     );
   }
 }

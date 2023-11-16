@@ -84,8 +84,9 @@ class _LoginPageState extends State<LoginPage> {
       onPressed: () {
         debugPrint("Username : " + usernameController.text);
         debugPrint("Password : " + passwordController.text);
+        //Navigasi Ke Main
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Main()));
+            context, MaterialPageRoute(builder: (context) => const Main()));
       },
       child: const SizedBox(
           width: double.infinity,
@@ -96,8 +97,8 @@ class _LoginPageState extends State<LoginPage> {
           )),
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
-        primary: Colors.white,
-        onPrimary: Colors.blue,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.blue,
         padding: const EdgeInsets.symmetric(vertical: 16),
       ),
     );
