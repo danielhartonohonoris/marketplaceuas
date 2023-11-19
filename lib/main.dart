@@ -5,7 +5,7 @@ import 'package:test4/NavbarPage/cart.dart';
 import 'package:test4/NavbarPage/home.dart';
 import 'package:test4/NavbarPage/likes.dart';
 import 'package:test4/LoginPage/login_page.dart';
-import 'package:test4/searchpage.dart';
+import 'package:test4/searchProduct/searchpage.dart';
 
 void main() {
   runApp(MaterialApp(

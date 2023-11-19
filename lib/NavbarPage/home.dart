@@ -165,7 +165,7 @@ class _HomeState extends State<Home> {
                                 //Memanggil fungsi untuk membuat title dan icon
                                 category.title,
                                 category.icon,
-                                //fungsi untuk menavigasi ke halaman kategori
+                                //Fungsi untuk menavigasi ke halaman kategori
                                 () {
                                   _navigateToCategoryPage(
                                     context,
@@ -635,7 +635,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  //widget yang membuat page baru dari masing-masing kategori.
+  //Widget yang membuat page baru dari masing-masing kategori.
   Widget _buildCategoryCard(
       String judul, IconData ikon, VoidCallback onPressed) {
     return GestureDetector(

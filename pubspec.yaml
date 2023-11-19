@@ -34,6 +34,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   animated_login: ^1.7.2
   search_page: ^2.3.0
+  intl: ^0.18.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,7 +69,6 @@ flutter:
      - image/iklan_1.jpg
      - image/iklan_2.jpg
      - image/iklan_3.jpg
-     - image/calculator.png
      - image/hp.jpg
      - image/sepatu.jpg
      - image/joystick.jpeg
