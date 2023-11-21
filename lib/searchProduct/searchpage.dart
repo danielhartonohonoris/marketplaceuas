@@ -27,10 +27,10 @@ class _SearchPageState extends State<SearchPage> {
     Headset("Headset", "image/headset.jpeg", 300.0),
     Parfum("Parfum", "image/parfum.jpg", 250.0),
   ];
-  
+
   //Memfilter daftar barang berdasarkan nama sesuai dengan input pencarian
   void _filterList(String searchQuery) {
-     //diupdate setiap kata-kata berubah
+    //diupdate setiap kata-kata berubah
     _filteredDataList.clear();
     if (searchQuery.isEmpty) {
       //diupdate setiap kata-kata berubah
@@ -53,7 +53,6 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   List<Item> _filteredDataList = [];
-
 
   @override
   Widget build(BuildContext context) {
@@ -176,16 +175,12 @@ class DetailPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {
-                      
-                    },
+                    onPressed: () {},
                     child: const Text('Add to Cart'),
                   ),
                   const SizedBox(width: 10),
                   IconButton(
-                    onPressed: () {
-                    
-                    },
+                    onPressed: () {},
                     icon: Icon(Icons.favorite_border),
                     color: Colors.blue,
                   ),

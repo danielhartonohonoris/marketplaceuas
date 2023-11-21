@@ -28,7 +28,7 @@ class _MainState extends State<Main> {
     const Home(),
     const Likes(),
     const Cart(),
-    const Account(),
+    Settings(),
   ];
 
   @override
@@ -76,7 +76,7 @@ class _MainState extends State<Main> {
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               duration: Duration(milliseconds: 800),
               tabBackgroundColor: Colors.grey.shade800,
-              tabs: const[
+              tabs: const [
                 GButton(
                   icon: Icons.home,
                   text: 'Home',
