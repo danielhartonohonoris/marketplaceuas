@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:test4/NavbarPage/likes.dart';
 import 'package:test4/searchProduct/Aqua.dart';
 import 'package:test4/searchProduct/Headset.dart';
 import 'package:test4/searchProduct/HpOppo.dart';
@@ -84,8 +85,8 @@ class _SearchPageState extends State<SearchPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            DetailPage(item: _filteredDataList[index]),
+                        builder: (context) => DetailPage(
+                            item: _filteredDataList[index]), // Use DetailPage
                       ),
                     );
                   },
@@ -175,13 +176,31 @@ class DetailPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Add to Cart logic
+                    },
                     child: const Text('Add to Cart'),
                   ),
                   const SizedBox(width: 10),
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.favorite_border),
+                    onPressed: () {
+                      final likes = Likes();
+                      likes.toggleLike(item);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            likes.likedItems.contains(item)
+                                ? 'Added to Likes'
+                                : 'Removed from Likes',
+                          ),
+                        ),
+                      );
+                    },
+                    icon: Icon(
+                      Likes().likedItems.contains(item)
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                    ),
                     color: Colors.blue,
                   ),
                 ],

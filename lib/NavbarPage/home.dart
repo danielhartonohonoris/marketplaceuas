@@ -180,7 +180,6 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-
               //Product
               Container(
                 margin: const EdgeInsets.only(right: 295, bottom: 10, top: 10),
@@ -189,8 +188,9 @@ class _HomeState extends State<Home> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+              SafeArea(
+                child: Container(
+                  margin: const EdgeInsets.fromLTRB(21, 0, 0, 0),
                 child: Column(
                   children: [
                     //Row 1
@@ -627,7 +627,8 @@ class _HomeState extends State<Home> {
                     SizedBox(height: 30),
                   ],
                 ),
-              ),
+                )
+              )  
             ],
           ),
         ),

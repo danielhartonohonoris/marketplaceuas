@@ -66,9 +66,6 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Shopping Cart'),
-      ),
       body: cartItems.isEmpty
           ? Center(
               child: Text('Your shopping cart is empty.'),
