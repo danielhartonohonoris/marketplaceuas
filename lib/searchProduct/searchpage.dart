@@ -86,7 +86,7 @@ class _SearchPageState extends State<SearchPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailPage(
-                            item: _filteredDataList[index]), // Use DetailPage
+                            item: _filteredDataList[index]),
                       ),
                     );
                   },
@@ -177,7 +177,7 @@ class DetailPage extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // Add to Cart logic
+                      
                     },
                     child: const Text('Add to Cart'),
                   ),
