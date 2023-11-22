@@ -5,14 +5,14 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Stack(
+            const Stack(
               alignment: Alignment.bottomRight,
               children: [
                 CircleAvatar(
@@ -21,38 +21,37 @@ class ProfilePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Unknown',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               'email@example.com',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Fungsi untuk mengedit profil
               },
-              child: Text('Edit Profil'),
+              child: const Text('Edit Profil'),
             ),
-            SizedBox(height: 16),
-            ListTile(
+            const SizedBox(height: 16),
+            const ListTile(
               leading: Icon(Icons.location_on),
               title: Text('Jakarta'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.phone),
               title: Text('0822-1234-3412'),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Skills',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -61,18 +60,17 @@ class ProfilePage extends StatelessWidget {
                 _buildSkillWidget(Icons.devices, 'Tech Gadgets'),
               ],
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'About Me',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               'Passionate Flutter developer with a love for creating beautiful and functional mobile applications.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
-            // Tambahkan widget atau fungsi tambahan sesuai kebutuhan
           ],
         ),
       ),
@@ -85,8 +83,8 @@ class ProfilePage extends StatelessWidget {
       child: Column(
         children: [
           Icon(icon, size: 40, color: Colors.blue),
-          SizedBox(height: 4),
-          Text(label, style: TextStyle(fontSize: 12)),
+          const SizedBox(height: 4),
+          Text(label, style: const TextStyle(fontSize: 12)),
         ],
       ),
     );

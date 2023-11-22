@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:test4/LoginPage/login_page.dart';
 import 'package:test4/NavbarPage/account.dart';
 import 'package:test4/NavbarPage/cart.dart';
 import 'package:test4/NavbarPage/home.dart';
 import 'package:test4/NavbarPage/likes.dart';
-import 'package:test4/LoginPage/login_page.dart';
 import 'package:test4/searchProduct/searchpage.dart';
 
 void main() {
@@ -27,8 +27,8 @@ class _MainState extends State<Main> {
   final List<Widget> pages = [
     const Home(),
     LikesPage(),
-    const Cart(),
-    Settings(),
+    CartPage(), // Add CartPage here
+    Account(),
   ];
 
   @override
@@ -37,12 +37,12 @@ class _MainState extends State<Main> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Marketplace'),
+          title: const Text('Marketplace'),
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
           actions: [
             IconButton(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -73,8 +73,8 @@ class _MainState extends State<Main> {
               color: Colors.white,
               activeColor: Colors.white,
               iconSize: 24,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              duration: Duration(milliseconds: 800),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              duration: const Duration(milliseconds: 800),
               tabBackgroundColor: Colors.grey.shade800,
               tabs: const [
                 GButton(

@@ -34,24 +34,24 @@ class _ProgressState extends State<Progress>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Order Progress'),
+        title: const Text('Order Progress'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _buildOverallProgress(),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           for (var i = 0; i < steps.length; i++)
             AnimatedProgressIndicator(
               step: steps[i],
               animationController: _animationController,
               delay: i * 200,
             ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: _restartProgress,
-            child: Text('Restart Progress'),
+            child: const Text('Restart Progress'),
           ),
         ],
       ),
@@ -65,17 +65,17 @@ class _ProgressState extends State<Progress>
 
     return Column(
       children: [
-        Text(
+        const Text(
           'Overall Progress',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         LinearProgressIndicator(
           value: overallProgress,
           color: Colors.green,
           backgroundColor: Colors.grey[300],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text('$completedSteps of $totalSteps steps completed'),
       ],
     );
