@@ -120,6 +120,7 @@ class Item {
   final double price;
   final String description;
   final List<String> features;
+  
 
   Item(
     this.name,

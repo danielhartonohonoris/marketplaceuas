@@ -52,6 +52,10 @@ class Cart {
 
     return totalPrice;
   }
+  void resetCart() {
+    _items.clear();
+    _itemQuantities.clear();
+  }
 }
 
 
@@ -93,7 +97,6 @@ class _CartPageState extends State<CartPage> {
                 IconButton(
                   icon: Icon(Icons.add),
                   onPressed: () {
-                    // Call a function to increment item quantity
                     setState(() {
                       _cart.addItem(item);
                     });
@@ -140,6 +143,7 @@ void _showPurchaseDialog(BuildContext context, double totalPrice) {
                 print('Pembayaran Berhasil');
                 Navigator.of(context).pop();
                 _showSuccessDialog(context); 
+                _cart.resetCart();
               },
               child: Text('Confirm'),
             ),
