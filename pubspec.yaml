@@ -87,6 +87,15 @@ flutter:
     - image/account.png
     - image/Marketplace.png
     - image/1024.png
+    - image/marketku.png
+    - image/asusrog.jpg
+    - image/tv.jpeg
+    - image/tablet.jpg
+    - image/speaker.jpeg
+    - image/smartwatch.jpg
+    - image/printer.jpeg
+    - image/kemara.jpeg
+    - image/flashsale.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
