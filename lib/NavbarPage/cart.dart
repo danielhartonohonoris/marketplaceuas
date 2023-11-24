@@ -1,141 +1,181 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:test4/searchProduct/searchpage.dart';
 
-class CartItem {
-  final String productName;
-  final double price;
-  final int quantity;
-  final String imagePath;
 
-  CartItem({
-    required this.productName,
-    required this.price,
-    required this.quantity,
-    required this.imagePath,
-  });
-}
 
-class Cart extends StatefulWidget {
-  const Cart({Key? key}) : super(key: key);
-
+class CartPage extends StatefulWidget {
   @override
-  _CartState createState() => _CartState();
+  _CartPageState createState() => _CartPageState();
 }
 
-class _CartState extends State<Cart> {
-  List<CartItem> cartItems = [
-    CartItem(
-      productName: 'Aqua',
-      price: 4.000,
-      quantity: 2,
-      imagePath: 'image/aqua.jpg',
-    ),
-    CartItem(
-      productName: 'Handphone Oppo',
-      price: 200000,
-      quantity: 1,
-      imagePath: 'image/hp.jpg',
-    ),
-    CartItem(
-      productName: 'joystick',
-      price: 200000,
-      quantity: 1,
-      imagePath: 'image/joystick.jpeg',
-    ),
-    CartItem(
-      productName: 'parfum',
-      price: 200000,
-      quantity: 1,
-      imagePath: 'image/parfum.jpg',
-    ),
-    CartItem(
-      productName: 'Topi',
-      price: 200000,
-      quantity: 1,
-      imagePath: 'image/topi.jpeg',
-    ),
-    CartItem(
-      productName: 'Le Mineral',
-      price: 200000,
-      quantity: 1,
-      imagePath: 'image/le_mineral.jpeg',
-    ),
-    // Add more cart items as needed
-  ];
+class Cart {
+  static final Cart _instance = Cart._internal();
+  factory Cart() => _instance;
+
+  Cart._internal();
+
+  final List<Item> _items = [];
+  final Map<Item, int> _itemQuantities = {};
+
+  List<Item> get items => _items;
+
+  void addItem(Item item) {
+    if (_itemQuantities.containsKey(item)) {
+      _itemQuantities[item] = _itemQuantities[item]! + 1;
+    } else {
+      _itemQuantities[item] = 1;
+      _items.add(item);
+    }
+  }
+
+  void removeItem(Item item) {
+    if (_itemQuantities.containsKey(item)) {
+      _itemQuantities[item] = _itemQuantities[item]! - 1;
+      if (_itemQuantities[item]! <= 0) {
+        _items.remove(item);
+        _itemQuantities.remove(item);
+      }
+    }
+  }
+
+  int getItemQuantity(Item item) {
+    return _itemQuantities[item] ?? 0;
+  }
+
+  double calculateTotalPrice() {
+    double totalPrice = 0.0;
+
+    for (var item in _items) {
+      totalPrice += (item.price * (_itemQuantities[item] ?? 0));
+    }
+
+    return totalPrice;
+  }
+  void resetCart() {
+    _items.clear();
+    _itemQuantities.clear();
+  }
+}
+
+
+
+class _CartPageState extends State<CartPage> {
+  final Cart _cart = Cart();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: cartItems.isEmpty
-          ? Center(
-              child: Text('Your shopping cart is empty.'),
-            )
-          : ListView.builder(
-              itemCount: cartItems.length,
-              itemBuilder: (context, index) {
-                return _buildCartItem(cartItems[index]);
-              },
-            ),
-    );
-  }
+      body: ListView.builder(
+        itemCount: _cart.items.length,
+        itemBuilder: (context, index) {
+          final item = _cart.items[index];
 
-  Widget _buildCartItem(CartItem item) {
-    return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          children: [
-            Image.asset(
-              item.imagePath,
-              width: 80.0,
-              height: 80.0,
-              fit: BoxFit.cover,
+          return ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(item.name),
+                Text('Jumlah ${_cart.getItemQuantity(item)}'),
+              ],
             ),
-            SizedBox(width: 16.0),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    item.productName,
-                    style:
-                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8.0),
-                  Text(
-                    'Price: ${NumberFormat.currency(locale: 'id_ID', symbol: 'Rp').format(item.price)}',
-                    style: TextStyle(fontSize: 14.0, color: Colors.grey),
-                  ),
-                  SizedBox(height: 8.0),
-                  Text(
-                    'Quantity: ${item.quantity}',
-                    style: TextStyle(fontSize: 14.0, color: Colors.grey),
-                  ),
-                ],
-              ),
+            subtitle: Text('Harga: ${_formatCurrency(item.price)}'),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(item.imagePath),
             ),
-            IconButton(
-              icon: Icon(Icons.remove_shopping_cart),
-              onPressed: () {
-                _removeItemFromCart(item);
-              },
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.remove),
+                  onPressed: () {
+                    setState(() {
+                      _cart.removeItem(item);
+                    });
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.add),
+                  onPressed: () {
+                    setState(() {
+                      _cart.addItem(item);
+                    });
+                  },
+                ),
+              ],
             ),
-          ],
+          );
+        },
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ElevatedButton(
+          onPressed: () {
+            _showPurchaseDialog(context, _cart.calculateTotalPrice());
+          },
+          child: Text('Buy'),
         ),
       ),
     );
   }
 
-  void _removeItemFromCart(CartItem item) {
-    setState(() {
-      cartItems.remove(item);
-    });
+  String _formatCurrency(double price) {
+    final priceFormat = NumberFormat('#,###.000', 'id_ID');
+    final formattedPrice = priceFormat.format(price);
+
+    final parts = formattedPrice.split('.');
+    final integerPart = parts[0];
+    final decimalPart = parts.length > 1 ? parts[1] : '';
+
+    return '$integerPart.$decimalPart';
+  }
+
+void _showPurchaseDialog(BuildContext context, double totalPrice) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Konfirmasi Pembayaran'),
+          content: Text('Total Harga: ${_formatCurrency(totalPrice)}'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                print('Pembayaran Berhasil');
+                Navigator.of(context).pop();
+                _showSuccessDialog(context); 
+                _cart.resetCart();
+              },
+              child: Text('Confirm'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: Cart(),
-  ));
+void _showSuccessDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Pembayaran Berhasil'),
+        content: Text('Terima Kasih Telah Membeli'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); //Popup success
+            },
+            child: Text('OK'),
+          ),
+        ],
+      );
+    },
+  );
 }

@@ -5,12 +5,12 @@ import 'package:test4/NavbarPage/NotifcationPage.dart';
 import 'package:test4/NavbarPage/ProfilePage.dart';
 import 'package:test4/NavbarPage/Progress.dart';
 
-class Settings extends StatefulWidget {
+class Account extends StatefulWidget {
   @override
-  _SettingsState createState() => _SettingsState();
+  _AccountState createState() => _AccountState();
 }
 
-class _SettingsState extends State<Settings> {
+class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,23 +18,23 @@ class _SettingsState extends State<Settings> {
       child: Column(
         children: <Widget>[
           Container(
-            alignment: Alignment(1, 1),
+            alignment: const Alignment(1, 1),
             width: MediaQuery.of(context).size.width,
             height: 190,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage("image/account.png"),
               ),
             ),
             child: Container(
-              margin: EdgeInsets.only(right: 10, bottom: 10),
+              margin: const EdgeInsets.only(right: 10, bottom: 10),
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
-                borderRadius: new BorderRadius.circular(60),
+                borderRadius: BorderRadius.circular(60),
               ),
               padding: const EdgeInsets.all(10.0),
-              child: Icon(
+              child: const Icon(
                 Icons.camera_alt,
                 color: Colors.white,
                 size: 32,
@@ -44,7 +44,7 @@ class _SettingsState extends State<Settings> {
           Column(
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(bottom: 0),
+                margin: const EdgeInsets.only(bottom: 0),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.secondary,
@@ -68,7 +68,7 @@ class _SettingsState extends State<Settings> {
                       color: Theme.of(context).colorScheme.secondary,
                       size: 28,
                     ),
-                    title: Text('Profile',
+                    title: const Text('Profile',
                         style: TextStyle(color: Colors.black, fontSize: 17)),
                     trailing: Icon(Icons.keyboard_arrow_right,
                         color: Theme.of(context).colorScheme.secondary),
@@ -87,7 +87,7 @@ class _SettingsState extends State<Settings> {
                       color: Theme.of(context).colorScheme.secondary,
                       size: 28,
                     ),
-                    title: Text('Notifications',
+                    title: const Text('Notifications',
                         style: TextStyle(color: Colors.black, fontSize: 17)),
                     trailing: Icon(Icons.keyboard_arrow_right,
                         color: Theme.of(context).colorScheme.secondary),
@@ -107,7 +107,7 @@ class _SettingsState extends State<Settings> {
                       color: Theme.of(context).colorScheme.secondary,
                       size: 28,
                     ),
-                    title: Text('Progress',
+                    title: const Text('Progress',
                         style: TextStyle(color: Colors.black, fontSize: 17)),
                     trailing: Icon(Icons.keyboard_arrow_right,
                         color: Theme.of(context).colorScheme.secondary),
@@ -126,7 +126,7 @@ class _SettingsState extends State<Settings> {
                       color: Theme.of(context).colorScheme.secondary,
                       size: 28,
                     ),
-                    title: Text('Feedback',
+                    title: const Text('Feedback',
                         style: TextStyle(color: Colors.black, fontSize: 17)),
                     trailing: Icon(Icons.keyboard_arrow_right,
                         color: Theme.of(context).colorScheme.secondary),
@@ -145,7 +145,7 @@ class _SettingsState extends State<Settings> {
                       color: Theme.of(context).colorScheme.secondary,
                       size: 28,
                     ),
-                    title: Text('About Us',
+                    title: const Text('About Us',
                         style: TextStyle(color: Colors.black, fontSize: 17)),
                     trailing: Icon(Icons.keyboard_arrow_right,
                         color: Theme.of(context).colorScheme.secondary),

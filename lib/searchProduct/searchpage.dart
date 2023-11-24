@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:test4/NavbarPage/cart.dart';
 import 'package:test4/NavbarPage/likes.dart';
 import 'package:test4/searchProduct/Aqua.dart';
 import 'package:test4/searchProduct/Headset.dart';
@@ -86,7 +87,7 @@ class _SearchPageState extends State<SearchPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailPage(
-                            item: _filteredDataList[index]),
+                            item: _filteredDataList[index]), // Use DetailPage
                       ),
                     );
                   },
@@ -119,6 +120,7 @@ class Item {
   final double price;
   final String description;
   final List<String> features;
+  
 
   Item(
     this.name,
@@ -177,7 +179,14 @@ class DetailPage extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      
+                      // Add to Cart logic
+                      final cart = Cart();
+                      cart.addItem(item);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Added to Cart'),
+                        ),
+                      );
                     },
                     child: const Text('Add to Cart'),
                   ),
@@ -209,17 +218,17 @@ class DetailPage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Deskripsi:',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     item.description,
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 20),
-                  Text(
+                  const Text(
                     'Fitur:',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
@@ -229,7 +238,7 @@ class DetailPage extends StatelessWidget {
                     children: item.features.map((feature) {
                       return Text(
                         '- $feature',
-                        style: TextStyle(fontSize: 16),
+                        style: const TextStyle(fontSize: 16),
                       );
                     }).toList(),
                   ),

@@ -14,14 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft,
-        colors: [
-          Colors.teal.shade400,
-          Colors.blueGrey.shade800,
-        ],
-      )),
+          image: DecorationImage(image: AssetImage('image/marketku.png'))),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: _page(),
@@ -40,7 +33,11 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 50),
             _inputField("Username", usernameController),
             const SizedBox(height: 20),
-            _inputField("Password", passwordController, isPassword: true),
+            _inputField(
+              "Password",
+              passwordController,
+              isPassword: true,
+            ),
             const SizedBox(height: 50),
             _loginBtn(),
             const SizedBox(height: 20),
@@ -54,9 +51,10 @@ class _LoginPageState extends State<LoginPage> {
   Widget _icon() {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.white, width: 2),
+          border: Border.all(color: Color.fromARGB(255, 134, 0, 243), width: 2),
           shape: BoxShape.circle),
-      child: const Icon(Icons.person, color: Colors.white, size: 120),
+      child: const Icon(Icons.person,
+          color: Color.fromARGB(255, 0, 0, 0), size: 120),
     );
   }
 
@@ -64,14 +62,14 @@ class _LoginPageState extends State<LoginPage> {
       {isPassword = false}) {
     var border = OutlineInputBorder(
         borderRadius: BorderRadius.circular(18),
-        borderSide: const BorderSide(color: Colors.white));
+        borderSide: const BorderSide(color: Color.fromARGB(255, 0, 0, 0)));
 
     return TextField(
-      style: const TextStyle(color: Colors.white),
+      style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white),
+        hintStyle: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
         enabledBorder: border,
         focusedBorder: border,
       ),
@@ -97,8 +95,8 @@ class _LoginPageState extends State<LoginPage> {
           )),
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 170, 63, 191),
+        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
         padding: const EdgeInsets.symmetric(vertical: 16),
       ),
     );
@@ -108,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
     return const Text(
       "Can't access to your account?",
       textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 16, color: Colors.white),
+      style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
     );
   }
 }

@@ -8,8 +8,8 @@ class Likes {
 
   Likes._internal();
 
-  List<Item> likedItems = [];
-
+  final List<Item> likedItems = [];
+  
   void toggleLike(Item item) {
     if (likedItems.contains(item)) {
       likedItems.remove(item);
@@ -18,6 +18,7 @@ class Likes {
     }
   }
 }
+
 
 class LikesPage extends StatelessWidget {
   @override

@@ -8,8 +8,8 @@ class NotificationsPage extends StatelessWidget {
         title: Text('Notifications'),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16),
-        children: <Widget>[
+        padding: const EdgeInsets.all(16),
+        children: const <Widget>[
           NotificationItem(
             productImage: 'image/le_mineral.jpeg',
             message: 'Le-Minerale Kemasan 600ML',
