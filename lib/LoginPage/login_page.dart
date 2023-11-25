@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
       decoration: BoxDecoration(
           image: DecorationImage(image: AssetImage('image/marketku.png'))),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: _page(),
       ),

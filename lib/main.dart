@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:test4/LoginPage/login_page.dart';
 import 'package:test4/NavbarPage/account.dart';
 import 'package:test4/NavbarPage/cart.dart';
 import 'package:test4/NavbarPage/home.dart';
 import 'package:test4/NavbarPage/likes.dart';
+import 'package:test4/NavbarPage/payment.dart';
 import 'package:test4/searchProduct/searchpage.dart';
 
 void main() {
@@ -33,7 +35,7 @@ class _MainState extends State<Main> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
@@ -47,6 +49,15 @@ class _MainState extends State<Main> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.payment),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PaymentPage()),
                 );
               },
             ),
@@ -104,6 +115,7 @@ class _MainState extends State<Main> {
           ),
         ),
       ),
+      
     );
   }
 }
