@@ -15,6 +15,8 @@ class _ElektronikState extends State<Elektronik> {
   final GlobalKey<CardItemState> cardItemKey6 = GlobalKey<CardItemState>();
   final GlobalKey<CardItemState> cardItemKey7 = GlobalKey<CardItemState>();
   final GlobalKey<CardItemState> cardItemKey8 = GlobalKey<CardItemState>();
+  final GlobalKey<CardItemState> cardItemKey9 = GlobalKey<CardItemState>();
+  final GlobalKey<CardItemState> cardItemKey10 = GlobalKey<CardItemState>();
 
   @override
   Widget build(BuildContext context) {
@@ -108,6 +110,28 @@ class _ElektronikState extends State<Elektronik> {
             key: cardItemKey8,
             imageAsset: 'image/tv.jpeg',
             title: 'TV',
+            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            onBeliSekarang: () {
+              // Rebuild the widget to update the position
+              setState(() {});
+            },
+          ),
+          SizedBox(height: 1), // Add some spacing between items
+          CardItem(
+            key: cardItemKey9,
+            imageAsset: 'image/tws.jpeg',
+            title: 'TWS',
+            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            onBeliSekarang: () {
+              // Rebuild the widget to update the position
+              setState(() {});
+            },
+          ),
+          SizedBox(height: 1), // Add some spacing between items
+          CardItem(
+            key: cardItemKey10,
+            imageAsset: 'image/headphone.jpeg',
+            title: 'Headphone',
             description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
