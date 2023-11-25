@@ -264,7 +264,7 @@ class DetailBarangElektronik extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('Beli Sekarang'),
+              child: Text('Add to Cart'),
             ),
           ],
         ),
