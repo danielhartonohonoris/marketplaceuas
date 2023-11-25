@@ -107,6 +107,40 @@ flutter:
     - image/printer.jpeg
     - image/kemara.jpeg
     - image/flashsale.jpeg
+    - image/baju.jpg
+    - image/celana dalam.jpeg
+    - image/gaun.jpeg
+    - image/hijab.jpeg
+    - image/hoodie.jpg
+    - image/jaket.jpg
+    - image/kupluk.jpg
+    - image/rok.jpeg
+    - image/singlet.jpeg
+    - image/kemeja.jpeg
+    - image/jeans.jpeg
+    - image/exfoliater.jpeg
+    - image/eyebrush.png
+    - image/eyeliner.jpeg
+    - image/foundation.jpeg
+    - image/lipbalm.jpeg
+    - image/lipstik.jpeg
+    - image/liptint.jpeg
+    - image/maskara.jpeg
+    - image/moisturizer.jpeg
+    - image/sunscreen.jpeg
+    - image/bebek.jpeg
+    - image/chatime.jpeg
+    - image/kfc.jpeg
+    - image/kopken.jpeg
+    - image/martabakmanis.jpeg
+    - image/martabaktelur.jpeg
+    - image/nasgor.jpeg
+    - image/pizza.jpeg
+    - image/sate.jpeg
+    - image/xiboba.jpeg
+    - image/tws.jpeg
+    - image/headphone.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
