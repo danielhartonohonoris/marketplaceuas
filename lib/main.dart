@@ -93,7 +93,7 @@ class _MainState extends State<Main> {
                   text: 'Home',
                 ),
                 GButton(
-                  icon: Icons.favorite_border,
+                  icon: Icons.favorite,
                   text: 'Likes',
                 ),
                 GButton(
