@@ -29,7 +29,7 @@ class _MainState extends State<Main> {
   final List<Widget> pages = [
     const Home(),
     LikesPage(),
-    CartPage(), // Add CartPage here
+    CartPage(),
     Account(),
   ];
 

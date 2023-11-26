@@ -27,7 +27,6 @@ class NotificationsPage extends StatelessWidget {
             message: 'Aqua Botol Kemasan 600ML',
             timestamp: '1 Hari lalu',
           ),
-          // Add more NotificationItem widgets as needed
         ],
       ),
     );

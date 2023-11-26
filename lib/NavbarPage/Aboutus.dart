@@ -16,7 +16,7 @@ class AboutUs extends StatelessWidget {
               height: 20,
             ),
             Image.asset(
-              'image/account.png', // Gantilah dengan path gambar logo Anda
+              'image/account.png',
               width: 200,
               height: 200,
             ),

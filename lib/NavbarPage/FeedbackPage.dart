@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-// 1. Rating Widget
+//Rating Widget
 class RatingBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.0),
-      child: Column(
+      padding: const EdgeInsets.all(16.0),
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
@@ -30,7 +30,7 @@ class RatingBar extends StatelessWidget {
   }
 }
 
-// 2. Form Widget
+//Form Widget
 class FeedbackForm extends StatelessWidget {
   final Function(String) onFeedbackSubmitted;
   FeedbackForm({required this.onFeedbackSubmitted, Key? key}) : super(key: key);
@@ -65,7 +65,7 @@ class FeedbackForm extends StatelessWidget {
   }
 }
 
-// 3. Submit Button
+//Submit Button
 class SubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -73,8 +73,6 @@ class SubmitButton extends StatelessWidget {
       padding: EdgeInsets.all(16.0),
       child: ElevatedButton(
         onPressed: () {
-          // Logika pengiriman feedback
-          // Anda dapat menambahkan logika validasi atau panggilan API di sini
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Feedback Submitted!')),
           );
@@ -85,7 +83,7 @@ class SubmitButton extends StatelessWidget {
   }
 }
 
-// 4. Image Upload
+//Image Upload
 class ImageUpload extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -101,7 +99,6 @@ class ImageUpload extends StatelessWidget {
           SizedBox(height: 10.0),
           ElevatedButton.icon(
             onPressed: () {
-              // Logika unggah gambar
             },
             icon: Icon(Icons.camera),
             label: Text('Upload Image'),
@@ -112,7 +109,7 @@ class ImageUpload extends StatelessWidget {
   }
 }
 
-// 5. Comment Section
+//Comment Section
 class CommentSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -139,7 +136,7 @@ class CommentSection extends StatelessWidget {
   }
 }
 
-// 6. History of Previous Feedback
+//History of Previous Feedback
 class PreviousFeedbackList extends StatefulWidget {
   final List<String> previousFeedbacks;
   final GlobalKey<PreviousFeedbackListState> feedbackListKey;
@@ -207,7 +204,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 setState(() {
                   previousFeedbacks.add(Feedback);
                   Navigator.pop(context);
-                  _formKey.currentState?.reset(); // Reset form setelah submit
+                  _formKey.currentState?.reset();
                 });
               },
               key: _formKey,

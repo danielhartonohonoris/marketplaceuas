@@ -57,7 +57,6 @@ class _LikesPageState extends State<LikesPage> {
                             builder: (context) => DetailPage(
                               likedItem: likes.likedItems[index],
                               onRemove: () {
-                                // Trigger a rebuild when an item is removed
                                 setState(() {});
                               },
                             ),
@@ -67,10 +66,8 @@ class _LikesPageState extends State<LikesPage> {
                       trailing: IconButton(
                         icon: Icon(Icons.delete),
                         onPressed: () {
-                          // Remove the liked item from the list
+                          //Menghapus Like dari list
                           likes.toggleLike(likes.likedItems[index]);
-
-                          // Trigger a rebuild to reflect the changes
                           setState(() {});
                         },
                       ),

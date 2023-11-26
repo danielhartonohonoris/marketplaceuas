@@ -18,7 +18,7 @@ class PaymentPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Total Amount: \RP 1.000.000', // Ganti dengan jumlah yang sesuai
+                  'Total Amount: \RP 1.000.000',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20),
@@ -55,7 +55,6 @@ class PaymentPage extends StatelessWidget {
                     _showGopayPopup(context);
                   },
                 ),
-                // Tambahkan metode pembayaran lainnya sesuai kebutuhan
                 SizedBox(height: 30),
                 "Alamat".text.color(fontGrey).fontFamily(bold).size(30).make(),
                 10.heightBox,
@@ -88,7 +87,7 @@ class PaymentPage extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(builder: (context) => Main()),
-                                ); // Tutup dialog
+                                );
                               },
                               child: Text('OK'),
                             ),
@@ -118,7 +117,7 @@ class PaymentPage extends StatelessWidget {
         return ListTile(
           leading: ClipOval(
             child: Image.asset(
-                'image/$assetName', // Path untuk asset image
+                'image/$assetName',
                   width: 40,
                   height: 40,
                 ),
@@ -147,12 +146,6 @@ void _showCreditCardPopup(BuildContext context) {
             ),
             ElevatedButton(
               onPressed: () {
-                // Implementasikan logika untuk memproses nomor kartu kredit di sini
-                // Contoh:
-                // String creditCardNumber = enteredCreditCardNumberController.text;
-                // Proses nomor kartu kredit dan lanjutkan ke langkah selanjutnya
-                // ...
-                // Setelah selesai, tutup pop-up
                 Navigator.of(context).pop();
               },
               child: Text('Submit'),
@@ -162,10 +155,7 @@ void _showCreditCardPopup(BuildContext context) {
       },
     );
   }
-
-  // Tambahkan fungsi serupa untuk PayPal, OVO, dan Gopay
-  // ...
-
+  
   void _showPayPalPopup(BuildContext context) {
     showDialog(
       context: context,
@@ -178,18 +168,13 @@ void _showCreditCardPopup(BuildContext context) {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Tutup pop-up
+                Navigator.of(context).pop(); //Tutup pop-up
               },
               child: Text('Cancel'),
             ),
             ElevatedButton(
               onPressed: () {
-                // Implementasikan logika untuk memproses username PayPal di sini
-                // Contoh:
-                // String paypalUsername = enteredPayPalUsernameController.text;
-                // Proses username PayPal dan lanjutkan ke langkah selanjutnya
-                // ...
-                // Setelah selesai, tutup pop-up
+                //Setelah selesai, akan menutup pop-up
                 Navigator.of(context).pop();
               },
               child: Text('Submit'),
@@ -212,18 +197,13 @@ void _showCreditCardPopup(BuildContext context) {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.of(context).pop(); // Tutup pop-up
+              Navigator.of(context).pop(); //Tutup pop-up
             },
             child: Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
-              // Implementasikan logika untuk memproses nomor telepon OVO di sini
-              // Contoh:
-              // String ovoPhoneNumber = enteredOvoPhoneNumberController.text;
-              // Proses nomor telepon OVO dan lanjutkan ke langkah selanjutnya
-              // ...
-              // Setelah selesai, tutup pop-up
+              //Setelah selesai, akan menutup pop-up
               Navigator.of(context).pop();
             },
             child: Text('Submit'),
@@ -246,18 +226,13 @@ void _showGopayPopup(BuildContext context) {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.of(context).pop(); // Tutup pop-up
+              Navigator.of(context).pop(); //Tutup pop-up
             },
             child: Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () {
-              // Implementasikan logika untuk memproses nomor telepon Gopay di sini
-              // Contoh:
-              // String gopayPhoneNumber = enteredGopayPhoneNumberController.text;
-              // Proses nomor telepon Gopay dan lanjutkan ke langkah selanjutnya
-              // ...
-              // Setelah selesai, tutup pop-up
+              //Setelah selesai, akan menutup pop-up
               Navigator.of(context).pop();
             },
             child: Text('Submit'),
