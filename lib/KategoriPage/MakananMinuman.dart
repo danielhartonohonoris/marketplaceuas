@@ -33,7 +33,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey1,
             imageAsset: 'image/bebek.jpeg',
             title: 'Bebek Panggang',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'Bebek panggang adalah hidangan yang terbuat dari bebek yang dipanggang dalam oven atau peralatan memasak lainnya. Proses ini biasanya melibatkan memarinate atau mengoleskan bebek dengan bumbu khusus untuk meningkatkan rasa dan kelembapan daging. Bebek panggang seringkali memiliki kulit yang renyah dan rasa daging yang lezat.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
@@ -44,7 +44,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey2,
             imageAsset: 'image/chatime.jpeg',
             title: 'Chatime',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'Chatime adalah jaringan gerai minuman teh asal Taiwan yang dikenal secara internasional. Berdiri pada tahun 2005, Chatime menyajikan berbagai minuman teh dengan pilihan rasa yang luas dan inovatif. Spesialisasinya adalah bubble tea atau pearl milk tea, yang terdiri dari campuran teh atau minuman lainnya dengan tambahan mutiara hitam yang kenyal.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
@@ -55,7 +55,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey3,
             imageAsset: 'image/kfc.jpeg',
             title: 'KFC',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'KFC, atau Kentucky Fried Chicken, adalah waralaba restoran cepat saji yang terkenal di seluruh dunia. Didirikan oleh Colonel Harland Sanders pada tahun 1930-an, KFC dikenal karena spesialisasinya dalam ayam goreng dengan resep rempah-rempah yang khas.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
@@ -66,7 +66,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey4,
             imageAsset: 'image/kopken.jpeg',
             title: 'Kopi Kenangan',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'Kopi Kenangan adalah jaringan gerai kopi yang berasal dari Indonesia dan telah berkembang pesat di Asia Tenggara. Didirikan pada tahun 2017, Kopi Kenangan dikenal karena menyajikan kopi berkualitas tinggi dengan harga yang terjangkau, sambil menawarkan berbagai varian minuman inovatif.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
@@ -77,7 +77,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey5,
             imageAsset: 'image/martabakmanis.jpeg',
             title: 'Martabak Manis',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'Martabak manis adalah hidangan kue Indonesia yang terkenal dan digemari oleh banyak orang. Martabak ini terdiri dari lapisan tipis adonan yang dibuat dari campuran tepung terigu, telur, gula, dan santan, yang kemudian dipanggang atau digoreng. Setelah itu, martabak manis diberi berbagai topping, seperti keju parut, cokelat, kacang, atau meses.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
@@ -88,7 +88,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey6,
             imageAsset: 'image/martabaktelur.jpeg',
             title: 'Martabak Telur',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'Martabak telur adalah hidangan populer Indonesia yang terbuat dari adonan tepung yang tipis dan kenyal, dilipat dan diisi dengan campuran telur, daging giling, bawang merah, bawang putih, daun bawang, dan berbagai bumbu lainnya. Setelah diisi, martabak telur kemudian dipanggang atau digoreng hingga kulitnya menjadi renyah dan berwarna kecokelatan.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
@@ -99,7 +99,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey7,
             imageAsset: 'image/nasgor.jpeg',
             title: 'Nasi Goreng',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'Nasi goreng adalah hidangan khas Indonesia yang terbuat dari nasi yang digoreng bersama bumbu-bumbu tertentu dan bahan tambahan lainnya. Nasi goreng merupakan salah satu hidangan yang sangat populer dan sering dianggap sebagai makanan nasional Indonesia.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
@@ -110,7 +110,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey8,
             imageAsset: 'image/pizza.jpeg',
             title: 'Pizza',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'Pizza adalah hidangan yang berasal dari Italia dan telah menjadi salah satu makanan yang populer di seluruh dunia. Pizza umumnya terdiri dari adonan tipis atau tebal yang dilapisi dengan saus tomat, keju, dan berbagai topping sesuai selera.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
@@ -121,7 +121,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
             key: cardItemKey9,
             imageAsset: 'image/sate.jpeg',
             title: 'Sate',
-            description: 'Deskripsi Barang: Lorem ipsum dolor sit amet...',
+            description: 'Sate, atau sering juga disebut satay, adalah hidangan yang terdiri dari potongan-potongan daging yang ditusuk ke atas tusukan bambu atau logam, kemudian dipanggang atau dibakar. Hidangan ini umumnya diberi bumbu kacang atau bumbu kecap dan sering disajikan bersama dengan nasi atau ketupat.',
             onBeliSekarang: () {
               // Rebuild the widget to update the position
               setState(() {});
