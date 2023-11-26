@@ -9,7 +9,7 @@ class Likes {
   Likes._internal();
 
   final List<Item> likedItems = [];
-  
+
   void toggleLike(Item item) {
     if (likedItems.contains(item)) {
       likedItems.remove(item);
@@ -19,12 +19,16 @@ class Likes {
   }
 }
 
+class LikesPage extends StatefulWidget {
+  @override
+  _LikesPageState createState() => _LikesPageState();
+}
 
-class LikesPage extends StatelessWidget {
+class _LikesPageState extends State<LikesPage> {
+  final Likes likes = Likes();
+
   @override
   Widget build(BuildContext context) {
-    final likes = Likes();
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -52,10 +56,24 @@ class LikesPage extends StatelessWidget {
                           MaterialPageRoute(
                             builder: (context) => DetailPage(
                               likedItem: likes.likedItems[index],
+                              onRemove: () {
+                                // Trigger a rebuild when an item is removed
+                                setState(() {});
+                              },
                             ),
                           ),
                         );
                       },
+                      trailing: IconButton(
+                        icon: Icon(Icons.delete),
+                        onPressed: () {
+                          // Remove the liked item from the list
+                          likes.toggleLike(likes.likedItems[index]);
+
+                          // Trigger a rebuild to reflect the changes
+                          setState(() {});
+                        },
+                      ),
                     ),
                   );
                 },
@@ -67,8 +85,9 @@ class LikesPage extends StatelessWidget {
 
 class DetailPage extends StatelessWidget {
   final Item likedItem;
+  final VoidCallback onRemove;
 
-  DetailPage({required this.likedItem});
+  DetailPage({required this.likedItem, required this.onRemove});
 
   @override
   Widget build(BuildContext context) {

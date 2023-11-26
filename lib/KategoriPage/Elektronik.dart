@@ -200,6 +200,26 @@ class CardItemState extends State<CardItem> {
             ),
           );
         },
+        trailing: IconButton(
+          icon: Icon(
+            Icons.shopping_cart,
+            color: Colors.blue,
+          ),
+          onPressed: () {
+            // Add the selected item to the shopping cart
+            ShoppingCart.addItem(
+              title: widget.title,
+              imageAsset: widget.imageAsset,
+              description: widget.description,
+            );
+            // Show a snackbar or provide some feedback
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('${widget.title} ditambahkan ke keranjang belanja'),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

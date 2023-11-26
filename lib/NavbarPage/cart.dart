@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:test4/searchProduct/searchpage.dart';
 
-
-
 class CartPage extends StatefulWidget {
   @override
   _CartPageState createState() => _CartPageState();
@@ -52,13 +50,12 @@ class Cart {
 
     return totalPrice;
   }
+
   void resetCart() {
     _items.clear();
     _itemQuantities.clear();
   }
 }
-
-
 
 class _CartPageState extends State<CartPage> {
   final Cart _cart = Cart();
@@ -130,7 +127,7 @@ class _CartPageState extends State<CartPage> {
     return '$integerPart.$decimalPart';
   }
 
-void _showPurchaseDialog(BuildContext context, double totalPrice) {
+  void _showPurchaseDialog(BuildContext context, double totalPrice) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -142,7 +139,7 @@ void _showPurchaseDialog(BuildContext context, double totalPrice) {
               onPressed: () {
                 print('Pembayaran Berhasil');
                 Navigator.of(context).pop();
-                _showSuccessDialog(context); 
+                _showSuccessDialog(context);
                 _cart.resetCart();
               },
               child: Text('Confirm'),
