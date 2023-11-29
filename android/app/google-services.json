@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "700255171322",
+    "project_id": "moprok-df00a",
+    "storage_bucket": "moprok-df00a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700255171322:android:0276817887cb19896d0f43",
+        "android_client_info": {
+          "package_name": "com.example.marketplaceuas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvs3h3tq71C4roRjjh5nUj-WSMuy45YVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

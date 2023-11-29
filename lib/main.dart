@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -9,7 +10,9 @@ import 'package:test4/NavbarPage/likes.dart';
 import 'package:test4/NavbarPage/payment.dart';
 import 'package:test4/searchProduct/searchpage.dart';
 
-void main() {
+Future main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MaterialApp(
     home: LoginPage(),
     debugShowCheckedModeBanner: false,

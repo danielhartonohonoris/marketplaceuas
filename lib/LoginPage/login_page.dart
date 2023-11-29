@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:test4/main.dart';
+import 'package:test4/LoginPage/auth_services.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -7,6 +9,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final FirebaseAuthService _auth=FirebaseAuthService();
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -81,11 +84,12 @@ class _LoginPageState extends State<LoginPage> {
   Widget _loginBtn() {
     return ElevatedButton(
       onPressed: () {
+        _signIn();
         debugPrint("Username : " + usernameController.text);
         debugPrint("Password : " + passwordController.text);
         //Navigasi Ke Main
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const Main()));
+        //Navigator.push(
+            //context, MaterialPageRoute(builder: (context) => const Main()));
       },
       child: const SizedBox(
           width: double.infinity,
@@ -109,5 +113,20 @@ class _LoginPageState extends State<LoginPage> {
       textAlign: TextAlign.center,
       style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
     );
+  }
+  void _signIn() async{
+    String email=usernameController.text;
+    String password=passwordController.text;
+
+    User? user=await _auth.signInWithEmailAndPassword(email, password);
+
+    if(user!=null){
+      print("succed");
+      Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const Main()));
+    }
+    else{
+      print("Akun Salah");
+    }
   }
 }
