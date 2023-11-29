@@ -23,6 +23,8 @@ class _PakaianState extends State<Pakaian> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red.shade600,
+        foregroundColor: Colors.white,
         title: Text('Pakaian'),
       ),
       body: ListView(

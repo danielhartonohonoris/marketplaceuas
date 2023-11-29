@@ -60,6 +60,8 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red.shade600,
+        foregroundColor: Colors.white,
         title: const Text('Search'),
       ),
       body: Column(

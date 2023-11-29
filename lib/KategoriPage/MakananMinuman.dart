@@ -21,6 +21,8 @@ class _MakananMinumanState extends State<MakananMinuman> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red.shade600,
+        foregroundColor: Colors.white,
         title: Text('Makanan & Minuman'),
       ),
       body: ListView(
