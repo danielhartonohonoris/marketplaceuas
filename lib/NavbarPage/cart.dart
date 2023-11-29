@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:intl/intl.dart';
+import 'package:test4/const/colors.dart';
 import 'package:test4/searchProduct/searchpage.dart';
 
 class CartPage extends StatefulWidget {
@@ -85,6 +87,7 @@ class _CartPageState extends State<CartPage> {
               children: [
                 IconButton(
                   icon: Icon(Icons.remove),
+                  color: redColor,
                   onPressed: () {
                     setState(() {
                       _cart.removeItem(item);
@@ -93,6 +96,7 @@ class _CartPageState extends State<CartPage> {
                 ),
                 IconButton(
                   icon: Icon(Icons.add),
+                  color: redColor,
                   onPressed: () {
                     setState(() {
                       _cart.addItem(item);
@@ -107,11 +111,17 @@ class _CartPageState extends State<CartPage> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ElevatedButton(
-          onPressed: () {
-            _showPurchaseDialog(context, _cart.calculateTotalPrice());
-          },
-          child: Text('Buy'),
-        ),
+            onPressed: () {
+              _showPurchaseDialog(context, _cart.calculateTotalPrice());
+            },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(
+                  Colors.red.shade600), // Ganti warna sesuai keinginan Anda
+            ),
+            child: Text(
+              'Buy',
+              style: TextStyle(color: Colors.white),
+            )),
       ),
     );
   }

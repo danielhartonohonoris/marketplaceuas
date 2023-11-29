@@ -40,7 +40,7 @@ class _MainState extends State<Main> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Marketplace'),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.red.shade600,
           foregroundColor: Colors.white,
           actions: [
             IconButton(
@@ -71,23 +71,23 @@ class _MainState extends State<Main> {
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
-            color: Colors.black,
+            color: Colors.red.shade600,
             boxShadow: [
-              BoxShadow(blurRadius: 20, color: Colors.white.withOpacity(.1))
+              BoxShadow(blurRadius: 20, color: Colors.white.withOpacity(.1)),
             ],
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
             child: GNav(
               gap: 8,
-              backgroundColor: Colors.black,
+              backgroundColor: Colors.red.shade600,
               color: Colors.white,
               activeColor: Colors.white,
               iconSize: 24,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               duration: const Duration(milliseconds: 800),
-              tabBackgroundColor: Colors.grey.shade800,
-              tabs: const [
+              tabBackgroundColor: Colors.red.shade400,
+              tabs: [
                 GButton(
                   icon: Icons.home,
                   text: 'Home',
@@ -115,7 +115,6 @@ class _MainState extends State<Main> {
           ),
         ),
       ),
-      
     );
   }
 }

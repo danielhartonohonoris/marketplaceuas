@@ -17,6 +17,7 @@ class _HomeState extends State<Home> {
     'image/iklan_1.jpg',
     'image/iklan_2.jpg',
     'image/iklan_3.jpg',
+    'image/flashsale.jpeg',
   ];
 
   List<CategoryModel> categories = [
@@ -30,7 +31,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan.shade700,
+      backgroundColor: Colors.white,
       body: SafeArea(
         //ScrollWidget
         child: SingleChildScrollView(
@@ -41,7 +42,7 @@ class _HomeState extends State<Home> {
                 margin: const EdgeInsets.all(16),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 249, 66, 66),
                   borderRadius: BorderRadius.circular(10.0),
                   boxShadow: [
                     BoxShadow(
@@ -65,6 +66,7 @@ class _HomeState extends State<Home> {
                         const Text(
                           'Kelompok Marketplace',
                           style: TextStyle(
+                            color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -72,7 +74,7 @@ class _HomeState extends State<Home> {
                         Container(
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: Colors.blue,
+                              color: Colors.white,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
@@ -83,7 +85,7 @@ class _HomeState extends State<Home> {
                             'Mengikuti',
                             style: TextStyle(
                               fontSize: 14,
-                              color: Colors.blue,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -100,7 +102,7 @@ class _HomeState extends State<Home> {
                   borderRadius: BorderRadius.circular(10.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: Colors.grey.shade400,
                       spreadRadius: 2,
                       blurRadius: 5,
                       offset: const Offset(0, 3),
@@ -189,8 +191,8 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SafeArea(
-                child: Container(
-                  margin: const EdgeInsets.fromLTRB(21, 0, 0, 0),
+                  child: Container(
+                margin: const EdgeInsets.fromLTRB(21, 0, 0, 0),
                 child: Column(
                   children: [
                     //Row 1
@@ -627,8 +629,7 @@ class _HomeState extends State<Home> {
                     SizedBox(height: 30),
                   ],
                 ),
-                )
-              )  
+              ))
             ],
           ),
         ),
