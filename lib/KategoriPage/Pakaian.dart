@@ -24,6 +24,7 @@ class _PakaianState extends State<Pakaian> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Pakaian'),
+        backgroundColor: Colors.red.shade600,
       ),
       body: ListView(
         children: [

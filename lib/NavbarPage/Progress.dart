@@ -35,6 +35,7 @@ class _ProgressState extends State<Progress>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Order Progress'),
+        backgroundColor: Colors.red.shade600,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

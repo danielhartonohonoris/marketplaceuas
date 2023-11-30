@@ -22,6 +22,7 @@ class _KecantikanState extends State<Kecantikan> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Kecantikan'),
+        backgroundColor: Colors.red.shade600,
       ),
       body: ListView(
         children: [

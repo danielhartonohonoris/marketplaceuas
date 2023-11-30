@@ -61,6 +61,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Search'),
+        backgroundColor: Colors.red.shade600,
       ),
       body: Column(
         children: [
@@ -87,7 +88,7 @@ class _SearchPageState extends State<SearchPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailPage(
-                            item: _filteredDataList[index]), // Use DetailPage
+                            item: _filteredDataList[index]),
                       ),
                     );
                   },
@@ -120,7 +121,6 @@ class Item {
   final double price;
   final String description;
   final List<String> features;
-  
 
   Item(
     this.name,
@@ -149,6 +149,7 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(item.name),
+        backgroundColor: Colors.red.shade600,
       ),
       body: SafeArea(
         child: Padding(
@@ -189,6 +190,10 @@ class DetailPage extends StatelessWidget {
                       );
                     },
                     child: const Text('Add to Cart'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.red.shade600),
+                    ),
                   ),
                   const SizedBox(width: 10),
                   IconButton(
@@ -210,7 +215,7 @@ class DetailPage extends StatelessWidget {
                           ? Icons.favorite
                           : Icons.favorite_border,
                     ),
-                    color: Colors.blue,
+                    color: Colors.red.shade600,
                   ),
                 ],
               ),

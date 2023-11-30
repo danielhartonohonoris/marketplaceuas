@@ -4,6 +4,15 @@ import 'package:test4/KategoriPage/Elektronik.dart';
 import 'package:test4/KategoriPage/Kecantikan.dart';
 import 'package:test4/KategoriPage/MakananMinuman.dart';
 import 'package:test4/KategoriPage/Pakaian.dart';
+import 'package:test4/Product/AirLeMineral.dart';
+import 'package:test4/Product/Aqua.dart';
+import 'package:test4/Product/Headset.dart';
+import 'package:test4/Product/Hp.dart';
+import 'package:test4/Product/JoystickGamepad.dart';
+import 'package:test4/Product/Sepatu.dart';
+import 'package:test4/Product/Topi.dart';
+import 'package:test4/Product/parfum.dart';
+import 'package:test4/searchProduct/Parfum.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -218,8 +227,14 @@ class _HomeState extends State<Home> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: const Alignment(0, -0.7),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Hp()),
+                                  );
+                                },
                                 child: Image.asset(
                                   'image/hp.jpg',
                                   width: 180,
@@ -268,11 +283,17 @@ class _HomeState extends State<Home> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: const Alignment(0, -0.7),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Sepatu()),
+                                  );
+                                },
                                 child: Image.asset(
                                   'image/sepatu.jpg',
-                                  width: 120,
+                                  width: 180,
                                   height: 90,
                                 ),
                               ),
@@ -326,11 +347,17 @@ class _HomeState extends State<Home> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: const Alignment(0, -0.7),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LeMineral()),
+                                  );
+                                },
                                 child: Image.asset(
                                   'image/le_mineral.jpeg',
-                                  width: 90,
+                                  width: 180,
                                   height: 90,
                                 ),
                               ),
@@ -376,11 +403,17 @@ class _HomeState extends State<Home> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: const Alignment(0, -0.7),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Joystick()),
+                                  );
+                                },
                                 child: Image.asset(
                                   'image/joystick.jpeg',
-                                  width: 90,
+                                  width: 180,
                                   height: 90,
                                 ),
                               ),
@@ -434,11 +467,17 @@ class _HomeState extends State<Home> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: const Alignment(0, -0.7),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Aqua()),
+                                  );
+                                },
                                 child: Image.asset(
                                   'image/aqua.jpg',
-                                  width: 120,
+                                  width: 180,
                                   height: 90,
                                 ),
                               ),
@@ -484,11 +523,17 @@ class _HomeState extends State<Home> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: const Alignment(0, -0.7),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Topi()),
+                                  );
+                                },
                                 child: Image.asset(
                                   'image/topi.jpeg',
-                                  width: 90,
+                                  width: 180,
                                   height: 90,
                                 ),
                               ),
@@ -542,11 +587,17 @@ class _HomeState extends State<Home> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: const Alignment(0, -0.7),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Headset()),
+                                  );
+                                },
                                 child: Image.asset(
                                   'image/headset.jpeg',
-                                  width: 90,
+                                  width: 180,
                                   height: 90,
                                 ),
                               ),
@@ -592,11 +643,17 @@ class _HomeState extends State<Home> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: const Alignment(0, -0.7),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => parfum()),
+                                  );
+                                },
                                 child: Image.asset(
                                   'image/parfum.jpg',
-                                  width: 90,
+                                  width: 180,
                                   height: 90,
                                 ),
                               ),
@@ -663,7 +720,7 @@ class _HomeState extends State<Home> {
             Icon(
               ikon,
               size: 30,
-              color: Colors.blue,
+              color: Colors.red.shade600,
             ),
             SizedBox(height: 8),
             Text(

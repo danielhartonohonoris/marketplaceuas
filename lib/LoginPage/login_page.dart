@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             _icon(),
             const SizedBox(height: 50),
-            _inputField("Username", usernameController),
+            _inputField("Email", usernameController),
             const SizedBox(height: 20),
             _inputField(
               "Password",
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
     return ElevatedButton(
       onPressed: () {
         _signIn();
-        debugPrint("Username : " + usernameController.text);
+        debugPrint("Email : " + usernameController.text);
         debugPrint("Password : " + passwordController.text);
         //Navigasi Ke Main
         //Navigator.push(

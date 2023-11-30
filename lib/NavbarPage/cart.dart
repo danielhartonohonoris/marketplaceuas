@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:intl/intl.dart';
 import 'package:test4/const/colors.dart';
 import 'package:test4/searchProduct/searchpage.dart';
@@ -115,8 +114,8 @@ class _CartPageState extends State<CartPage> {
               _showPurchaseDialog(context, _cart.calculateTotalPrice());
             },
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                  Colors.red.shade600), // Ganti warna sesuai keinginan Anda
+              backgroundColor:
+                  MaterialStateProperty.all<Color>(Colors.red.shade600),
             ),
             child: Text(
               'Buy',

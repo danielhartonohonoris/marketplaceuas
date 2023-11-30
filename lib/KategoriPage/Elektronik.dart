@@ -22,6 +22,7 @@ class _ElektronikState extends State<Elektronik> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Elektronik'),
+        backgroundColor: Colors.red.shade600,
       ),
       body: ListView(
         children: [

@@ -22,6 +22,7 @@ class _MakananMinumanState extends State<MakananMinuman> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Makanan & Minuman'),
+        backgroundColor: Colors.red.shade600,
       ),
       body: ListView(
         children: [
