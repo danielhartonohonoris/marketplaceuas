@@ -21,6 +21,8 @@ class _KecantikanState extends State<Kecantikan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red.shade600,
+        foregroundColor: Colors.white,
         title: Text('Kecantikan'),
         backgroundColor: Colors.red.shade600,
       ),
