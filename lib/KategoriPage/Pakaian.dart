@@ -26,7 +26,6 @@ class _PakaianState extends State<Pakaian> {
         backgroundColor: Colors.red.shade600,
         foregroundColor: Colors.white,
         title: Text('Pakaian'),
-        backgroundColor: Colors.red.shade600,
       ),
       body: ListView(
         children: [

@@ -24,7 +24,6 @@ class _KecantikanState extends State<Kecantikan> {
         backgroundColor: Colors.red.shade600,
         foregroundColor: Colors.white,
         title: Text('Kecantikan'),
-        backgroundColor: Colors.red.shade600,
       ),
       body: ListView(
         children: [

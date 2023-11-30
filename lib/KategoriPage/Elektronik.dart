@@ -24,11 +24,6 @@ class _ElektronikState extends State<Elektronik> {
         backgroundColor: Colors.red.shade600,
         foregroundColor: Colors.white,
         title: Text('Elektronik'),
-<<<<<<< HEAD
-        backgroundColor: Colors.red.shade600,
-=======
-        
->>>>>>> 0ace15edf8ef0b7ad7bcc9a2a2f32ac977375249
       ),
       body: ListView(
         children: [

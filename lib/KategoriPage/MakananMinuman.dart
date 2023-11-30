@@ -24,7 +24,6 @@ class _MakananMinumanState extends State<MakananMinuman> {
         backgroundColor: Colors.red.shade600,
         foregroundColor: Colors.white,
         title: Text('Makanan & Minuman'),
-        backgroundColor: Colors.red.shade600,
       ),
       body: ListView(
         children: [
