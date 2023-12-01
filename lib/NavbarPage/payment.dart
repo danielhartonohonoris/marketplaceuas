@@ -90,10 +90,7 @@ class PaymentPage extends StatelessWidget {
                         actions: [
                           TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Main()),
-                              );
+                              Navigator.of(context).pop();
                             },
                             child: Text('OK'),
                           ),

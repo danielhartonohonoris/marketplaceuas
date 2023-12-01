@@ -124,14 +124,16 @@ class _HomeState extends State<Home> {
                       builder: (BuildContext context) {
                         return Container(
                           width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 20),
+                          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Image.asset(
-                            assetPath,
-                            fit: BoxFit.cover,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Image.asset(
+                              assetPath,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         );
                       },
@@ -214,6 +216,7 @@ class _HomeState extends State<Home> {
                           height: 170,
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
@@ -270,6 +273,7 @@ class _HomeState extends State<Home> {
                           width: 170,
                           height: 170,
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
@@ -334,6 +338,7 @@ class _HomeState extends State<Home> {
                           height: 170,
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
@@ -390,6 +395,7 @@ class _HomeState extends State<Home> {
                           width: 170,
                           height: 170,
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
@@ -454,6 +460,7 @@ class _HomeState extends State<Home> {
                           height: 170,
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
@@ -510,6 +517,7 @@ class _HomeState extends State<Home> {
                           width: 170,
                           height: 170,
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
@@ -574,6 +582,7 @@ class _HomeState extends State<Home> {
                           height: 170,
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
@@ -630,6 +639,7 @@ class _HomeState extends State<Home> {
                           width: 170,
                           height: 170,
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
