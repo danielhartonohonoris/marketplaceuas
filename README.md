@@ -1,5 +1,15 @@
 # marketplaceuas
 
+Kelompok 4: Marketplace
+
+535220206 / Daniel Hartono Honoris = danielhartonhonoris
+535220189 / Jhonatan Marikros = JhonatanMarikros
+535220181 / Ravelino Radissey = Ravelino Radissey / Revixyy
+535220186 / Valentino Richardo Lim = Viarell
+535220206 / Fadhel Putra Felmi = Fadhel /bapakfadhel    
+535220221 / Muhammad Syauqi Rasyid = Msyauqi
+
+
 A new Flutter project.
 
 ## Getting Started

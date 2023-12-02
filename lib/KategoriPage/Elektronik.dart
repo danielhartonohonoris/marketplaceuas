@@ -202,6 +202,8 @@ class DetailBarangElektronik extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red.shade600,
+        foregroundColor: Colors.white,
         title: Text('Detail Barang Elektronik'),
       ),
       body: Padding(
@@ -227,16 +229,6 @@ class DetailBarangElektronik extends StatelessWidget {
               textAlign: TextAlign.justify,
             ),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('$title ditambahkan ke keranjang belanja'),
-                  ),
-                );
-              },
-              child: Text('Add to Cart'),
-            ),
           ],
         ),
       ),

@@ -202,6 +202,8 @@ class DetailBarangElektronik extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red.shade600,
+        foregroundColor: Colors.white,
         title: Text('Detail Barang Makanan & Minuman'),
       ),
       body: Padding(
